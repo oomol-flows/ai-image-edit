@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 scripts:
   bootstrap: |
     npm install
@@ -8,6 +8,6 @@ displayName: AI Image Edit
 icon: ./icon.png
 description: AI Image Edit
 repository: https://github.com/oomol-flows/ai-image-edit.git
-releaseNotes: AI Image Edit
+releaseNotes: fix bug
 dependencies:
   llm: 0.3.4
