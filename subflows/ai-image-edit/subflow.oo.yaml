@@ -1,0 +1,95 @@
+title: "AI Image Edit"
+nodes:
+  - node_id: fal-image-process#1
+    task: self::edit_block
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/mathias-dargnat-SfiXbdYi9fg-unsplash.jpg
+        from_flow:
+          - input_handle: file
+        from_node:
+          []
+      - handle: prompt
+        value: Eagle to pigeon
+        from_node:
+          - node_id: llm#1
+            output_handle: english_output
+      - handle: output_file
+        value:
+        from_node:
+          []
+  - node_id: llm#1
+    title: "LLM #1"
+    inputs_from:
+      - handle: messages
+        value: null
+      - handle: timeout
+        value: 30
+      - handle: retry_times
+        value: 0
+      - handle: retry_sleep
+        value: 3.5
+      - handle: model
+        value:
+          model: deepseek-chat
+          temperature: 0.5
+          top_p: 1
+          max_tokens: 8192
+      - handle: template
+        value:
+          - role: user
+            content: "将  {{input}}，翻译成英文。"
+        schema_overrides:
+          - schema:
+              type: array
+      - handle: skills
+        value:
+          []
+      - handle: stream
+        value: true
+      - handle: input
+        value: 鸽子换成老鹰
+        from_flow:
+          - input_handle: input
+    task: llm::llm
+    inputs_def:
+      - handle: input
+        json_schema:
+          type: string
+          ui:widget: text
+        value: hello!
+    outputs_def:
+      - handle: english_output
+        description: write your answer here
+        json_schema:
+          type: string
+inputs_def:
+  - handle: file
+    description: 要上传的图像文件
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: false
+    executor_name: python
+  - handle: input
+    json_schema:
+      type: string
+      ui:widget: text
+    nullable: false
+    executor_name: python
+outputs_def:
+  - handle: image
+    json_schema:
+      type: array
+      items:
+        type: string
+    nullable: false
+    description: 处理后的图像文件列表
+    executor_name: python
+outputs_from:
+  - handle: image
+    from_node:
+      - node_id: fal-image-process#1
+        output_handle: image
+description: Enter a paragraph of text and an image, and the AI ​​will edit the
+  image based on the text and output the image address.

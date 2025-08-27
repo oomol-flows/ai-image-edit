@@ -1,9 +1,0 @@
-title: "ai-image-porcess-test"
-nodes:
-  - node_id: fal-image-process#1
-    task: self::ai-image-eidt
-    inputs_from:
-      - handle: file
-      - handle: prompt
-      - handle: output_file
-        value:

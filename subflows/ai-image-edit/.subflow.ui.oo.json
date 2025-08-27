@@ -1,0 +1,54 @@
+{
+  "nodes": {
+    "fal-image-process#1": {
+      "rfNode": {
+        "position": {
+          "x": 113,
+          "y": -41.125
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "prompt": {
+              "[]": false
+            }
+          }
+        }
+      }
+    },
+    "llm#1": {
+      "rfNode": {
+        "position": {
+          "x": -514.4569835852158,
+          "y": -82.47134177395118
+        }
+      },
+      "sections": {
+        "inputs": {
+          "groupCollapsed": {
+            "Connection": true
+          }
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": -1076.512921182462,
+          "y": -193.72070070962084
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 485.54301641478423,
+          "y": -182.47134177395117
+        }
+      }
+    }
+  }
+}

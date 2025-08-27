@@ -1,4 +1,4 @@
-title: "AI Image Edit"
+title: "Edit Block"
 icon: ":carbon:draw:"
 
 inputs_def:
@@ -33,3 +33,4 @@ executor:
   options:
     entry: __init__.py
     spawn: false
+private: true

@@ -9,3 +9,5 @@ icon: ./icon.png
 description: AI Image Edit
 repository: https://github.com/oomol-flows/ai-image-edit.git
 releaseNotes: AI Image Edit
+dependencies:
+  llm: 0.3.4
