@@ -1,0 +1,11 @@
+version: 0.0.1
+scripts:
+  bootstrap: |
+    npm install
+    poetry install --no-root
+name: ai-image-edit
+displayName: AI Image Edit
+icon: ./icon.png
+description: AI Image Edit
+repository: https://github.com/oomol-flows/ai-image-edit.git
+releaseNotes: AI Image Edit

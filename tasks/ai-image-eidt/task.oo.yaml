@@ -1,0 +1,35 @@
+title: "AI Image Edit"
+icon: ":carbon:draw:"
+
+inputs_def:
+  - handle: file
+    description: 要上传的图像文件
+    json_schema:
+      type: string
+      ui:widget: file
+  - handle: prompt
+    description: 图像处理提示词
+    json_schema:
+      type: string
+      ui:widget: text
+  - handle: output_file
+    json_schema:
+      type: string
+      ui:widget: save
+    nullable: true
+    value:
+
+
+outputs_def:
+  - handle: image
+    description: 处理后的图像文件列表
+    json_schema:
+      type: array
+      items:
+        type: string
+
+executor:
+  name: python
+  options:
+    entry: __init__.py
+    spawn: false

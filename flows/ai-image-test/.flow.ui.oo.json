@@ -1,0 +1,21 @@
+{
+  "nodes": {
+    "fal-image-process#1": {
+      "rfNode": {
+        "position": {
+          "x": 113,
+          "y": -41.125
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "prompt": {
+              "[]": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
