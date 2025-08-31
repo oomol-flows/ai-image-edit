@@ -3,10 +3,9 @@ nodes:
   - node_id: fal-image-process#1
     task: self::edit_block
     inputs_from:
-      - handle: file
-        value: /oomol-driver/oomol-storage/mathias-dargnat-SfiXbdYi9fg-unsplash.jpg
+      - handle: files
         from_flow:
-          - input_handle: file
+          - input_handle: files
         from_node:
           []
       - handle: prompt
@@ -18,6 +17,10 @@ nodes:
         value:
         from_node:
           []
+      - handle: model
+        value: nano-banana/edit
+        from_flow:
+          - input_handle: model
   - node_id: llm#1
     title: "LLM #1"
     inputs_from:
@@ -64,13 +67,24 @@ nodes:
         json_schema:
           type: string
 inputs_def:
-  - handle: file
+  - handle: files
     description: 要上传的图像文件
     json_schema:
-      type: string
-      ui:widget: file
+      type: array
     nullable: false
     executor_name: python
+  - handle: model
+    json_schema:
+      enum:
+        - nano-banana/edit
+        - flux-pro/kontext
+      ui:options:
+        labels:
+          - nano-banana/edit
+          - flux-pro/kontext
+    executor_name: python
+    nullable: true
+    value:
   - handle: input
     json_schema:
       type: string

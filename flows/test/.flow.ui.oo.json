@@ -1,0 +1,12 @@
+{
+  "nodes": {
+    "ai-image-edit#1": {
+      "rfNode": {
+        "position": {
+          "x": 250,
+          "y": 113
+        }
+      }
+    }
+  }
+}
