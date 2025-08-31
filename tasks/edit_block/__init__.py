@@ -79,6 +79,7 @@ def main(params: Inputs, context: Context) -> Outputs:
         if model =="nano-banana/edit":
             result_data = response.json()
         else :
+            result_data = response.json()
             if 'request_id' not in result_data:
                 raise ValueError("Invalid API response format: missing request_id")
             
