@@ -1,23 +1,14 @@
 title: test
 nodes:
-  - node_id: ai-image-edit#1
-    title: "AI Image Edit #1"
+  - node_id: ai-image-edit#3
+    title: "AI Image Edit #3"
     inputs_from:
       - handle: files
         value:
-          - /oomol-driver/oomol-storage/tmpfddkaefq.jpg
-          - /oomol-driver/oomol-storage/car.png
-        schema_overrides:
-          - path: 0
-            schema:
-              type: string
-              ui:widget: file
-          - path: 1
-            schema:
-              type: string
-              ui:widget: file
-      - handle: input
-        value: Characters driving in China
+          []
+      - handle: description
       - handle: model
         value: nano-banana/edit
+      - handle: output_file
+        value: null
     subflow: self::ai-image-edit

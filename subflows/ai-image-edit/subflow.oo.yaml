@@ -4,6 +4,8 @@ nodes:
     task: self::edit_block
     inputs_from:
       - handle: files
+        value:
+          - /oomol-driver/oomol-storage
         from_flow:
           - input_handle: files
         from_node:
@@ -15,6 +17,8 @@ nodes:
             output_handle: english_output
       - handle: output_file
         value:
+        from_flow:
+          - input_handle: output_file
         from_node:
           []
       - handle: model
@@ -53,7 +57,7 @@ nodes:
       - handle: input
         value: 鸽子换成老鹰
         from_flow:
-          - input_handle: input
+          - input_handle: description
     task: llm::llm
     inputs_def:
       - handle: input
@@ -68,9 +72,18 @@ nodes:
           type: string
 inputs_def:
   - handle: files
-    description: 要上传的图像文件
     json_schema:
       type: array
+      items:
+        type: string
+        ui:widget: file
+    nullable: false
+    description: 要上传的图像文件
+    executor_name: python
+  - handle: description
+    json_schema:
+      type: string
+      ui:widget: text
     nullable: false
     executor_name: python
   - handle: model
@@ -82,14 +95,15 @@ inputs_def:
         labels:
           - nano-banana/edit
           - flux-pro/kontext
+    value: nano-banana/edit
+    nullable: false
     executor_name: python
-    nullable: true
-    value:
-  - handle: input
+  - handle: output_file
     json_schema:
       type: string
-      ui:widget: text
-    nullable: false
+      ui:widget: save
+    nullable: true
+    value:
     executor_name: python
 outputs_def:
   - handle: image
