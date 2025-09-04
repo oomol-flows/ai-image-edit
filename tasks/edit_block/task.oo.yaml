@@ -2,15 +2,36 @@ title: "Edit Block"
 icon: ":carbon:draw:"
 
 inputs_def:
-  - handle: files
+  - handle: main_image
+    json_schema:
+      type: string
+      ui:widget: file
+      ui:options:
+        excludeAll: true
+        filters:
+          - name: Image
+            extensions:
+              - jpg
+              - png
+              - webp
+              - jpeg
+  - handle: sub_image
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: true
+    value:
+  - handle: other_images
     description: 要上传的图像文件
     json_schema:
       type: array
-      items:
-        type: string
-        ui:widget: file
     value:
-      []
+    nullable: true
+  - handle: prompt
+    description: 图像处理提示词
+    json_schema:
+      type: string
+      ui:widget: text
   - handle: model
     json_schema:
       enum:
@@ -20,11 +41,6 @@ inputs_def:
         labels:
           - flux-pro/kontext
           - nano-banana/edit
-  - handle: prompt
-    description: 图像处理提示词
-    json_schema:
-      type: string
-      ui:widget: text
   - handle: output_file
     json_schema:
       type: string

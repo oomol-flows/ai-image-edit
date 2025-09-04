@@ -3,12 +3,16 @@ nodes:
   - node_id: ai-image-edit#3
     title: "AI Image Edit #3"
     inputs_from:
-      - handle: files
-        value:
-          []
       - handle: description
+        value: 给主图换衣服
       - handle: model
         value: nano-banana/edit
       - handle: output_file
-        value: null
+        value: /oomol-driver/oomol-storage/image/image.j
+      - handle: other_images
+        value:
+      - handle: sub_image
+        value: /oomol-driver/oomol-storage/image/衣服.jpg
+      - handle: main_image
+        value: /oomol-driver/oomol-storage/image/模特.jpg
     subflow: self::ai-image-edit

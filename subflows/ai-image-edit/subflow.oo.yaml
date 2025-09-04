@@ -3,11 +3,11 @@ nodes:
   - node_id: fal-image-process#1
     task: self::edit_block
     inputs_from:
-      - handle: files
+      - handle: other_images
         value:
           - /oomol-driver/oomol-storage
         from_flow:
-          - input_handle: files
+          - input_handle: other_images
         from_node:
           []
       - handle: prompt
@@ -25,6 +25,13 @@ nodes:
         value: nano-banana/edit
         from_flow:
           - input_handle: model
+      - handle: sub_image
+        value:
+        from_flow:
+          - input_handle: sub_image
+      - handle: main_image
+        from_flow:
+          - input_handle: main_image
   - node_id: llm#1
     title: "LLM #1"
     inputs_from:
@@ -71,14 +78,34 @@ nodes:
         json_schema:
           type: string
 inputs_def:
-  - handle: files
+  - handle: main_image
+    json_schema:
+      type: string
+      ui:widget: file
+      ui:options:
+        excludeAll: true
+        filters:
+          - name: Image
+            extensions:
+              - jpg
+              - png
+              - webp
+              - jpeg
+    nullable: false
+    executor_name: python
+  - handle: sub_image
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: true
+    value:
+    executor_name: python
+  - handle: other_images
     json_schema:
       type: array
-      items:
-        type: string
-        ui:widget: file
-    nullable: false
+    nullable: true
     description: 要上传的图像文件
+    value:
     executor_name: python
   - handle: description
     json_schema:
@@ -102,8 +129,8 @@ inputs_def:
     json_schema:
       type: string
       ui:widget: save
-    nullable: true
     value:
+    nullable: true
     executor_name: python
 outputs_def:
   - handle: image

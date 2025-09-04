@@ -1,15 +1,15 @@
-# region generated meta
+#region generated meta
 import typing
-
 class Inputs(typing.TypedDict):
-    files: typing.List[str]
-    model: str | None
+    main_image: str
+    sub_image: str | None
+    other_images: list[typing.Any] | None
     prompt: str
-    output_file: str
-
+    model: typing.Literal["flux-pro/kontext", "nano-banana/edit"]
+    output_file: str | None
 class Outputs(typing.TypedDict):
-    images: typing.List[str]
-# endregion
+    image: list[str]
+#endregion
 
 import os
 import requests
@@ -24,10 +24,32 @@ def main(params: Inputs, context: Context) -> Outputs:
     console_api_url = context.oomol_llm_env.get("base_url")
     api_key: Any = context.oomol_llm_env.get("api_key")
     
-    file_paths = params["files"]
+    main_image = params["main_image"]
+    sub_image = params.get("sub_image")
+    other_images = params.get("other_images", [])
     prompt = params["prompt"]
     model = params.get("model", "nano-banana/edit")
-    output_dir = params.get("output_dir", "/oomol-driver/oomol-storage")
+    
+    # 合并所有图像文件
+    file_paths = [main_image]
+    if sub_image:
+        file_paths.append(sub_image)
+    if other_images:
+        file_paths.extend(other_images)
+    
+    # 构建包含图像角色信息的增强prompt
+    enhanced_prompt = prompt
+    if len(file_paths) > 1:
+        image_descriptions = []
+        image_descriptions.append("Image 1: main image")
+        if sub_image:
+            image_descriptions.append("Image 2: sub image")
+        if other_images:
+            start_idx = 3 if sub_image else 2
+            for i, _ in enumerate(other_images):
+                image_descriptions.append(f"Image {start_idx + i}: other image")
+        
+        enhanced_prompt = f"{prompt}\n\nImage descriptions:\n" + "\n".join(image_descriptions)
     
     # Validate input files exist
     if not file_paths or len(file_paths) == 0:
@@ -62,7 +84,7 @@ def main(params: Inputs, context: Context) -> Outputs:
             files_array.append((fileKey, (file_name, open(file_path, 'rb'), f'image/{file_format[1:]}')))
 
         data = {
-            'prompt': prompt,
+            'prompt': enhanced_prompt,
             'model': model
         }
         
