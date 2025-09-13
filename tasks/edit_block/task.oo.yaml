@@ -1,5 +1,8 @@
 title: "Edit Block"
 icon: ":carbon:draw:"
+description: "AI-powered image editing block that allows users to modify images
+  using various models like flux-pro/kontext and nano-banana/edit with custom
+  prompts"
 
 inputs_def:
   - handle: main_image

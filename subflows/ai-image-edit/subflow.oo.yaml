@@ -146,5 +146,4 @@ outputs_from:
     from_node:
       - node_id: fal-image-process#1
         output_handle: image
-description: Enter a paragraph of text and an image, and the AI ​​will edit the
-  image based on the text and output the image address.
+description: "%enter-a-paragraph-of-text-and-an-image-and-the-ai-will-edit-the%"
