@@ -1,11 +1,5 @@
 # AI Image Edit
 
-An intelligent image editing workflow powered by AI that transforms images based on text descriptions.
-
-![AI Image Edit Icon](icon.png)
-
-## Overview
-
 AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone.
 
 ## Features
