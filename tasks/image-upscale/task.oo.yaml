@@ -1,0 +1,15 @@
+executor:
+  name: python
+  options:
+    entry: __init__.py
+inputs_def:
+  - handle: image_url
+    json_schema:
+      type: string
+outputs_def:
+  - handle: upscaled_image_url
+    json_schema:
+      type: string
+title: Image Upscale
+icon: ":fa6-solid:angles-up:"
+private: true

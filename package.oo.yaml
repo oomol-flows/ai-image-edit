@@ -10,4 +10,5 @@ description: "%ai-image-edit-is-a-powerful-workflow-tool-that-uses-artificial-i%
 repository: https://github.com/oomol-flows/ai-image-edit.git
 dependencies:
   llm: 0.3.4
+  upload-to-cloud: 0.0.3
 releaseNotes: updat cn

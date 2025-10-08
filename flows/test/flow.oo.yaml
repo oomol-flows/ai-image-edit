@@ -16,3 +16,9 @@ nodes:
       - handle: main_image
         value: /oomol-driver/oomol-storage/image/模特.jpg
     subflow: self::ai-image-edit
+  - node_id: ai-image-upscale#1
+    title: "AI Image Upscale #1"
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/avatar.png
+    subflow: self::ai-image-upscale
