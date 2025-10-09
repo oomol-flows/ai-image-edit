@@ -9,6 +9,7 @@ AI Image Edit is a powerful workflow tool that uses artificial intelligence to e
 - **Reference Image Support**: Add reference images to guide the AI transformation
 - **Multiple Image Input**: Process multiple images at once for batch operations
 - **Smart Text Translation**: Automatically translates Chinese descriptions to English for better AI understanding
+- **Image Upscaling**: Enhance image resolution and quality with AI-powered upscaling technology
 
 ### 🤖 Multiple AI Models
 Choose from different AI models based on your needs:
@@ -33,7 +34,17 @@ The core functionality is provided by the **Edit Block**, which processes your i
 4. **Processing**: The AI analyzes your images and text to create the desired transformation
 5. **Output**: Receive your edited image with a preview
 
+### The Image Upscale Block
+
+The **Image Upscale Block** enhances image quality through AI-powered upscaling:
+
+1. **Image Input**: Provide the URL of the image you want to upscale
+2. **AI Processing**: Advanced algorithms analyze and enhance the image resolution
+3. **Output**: Receive a higher quality, upscaled version of your image
+
 ### Input Parameters
+
+#### Edit Block Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
@@ -44,9 +55,16 @@ The core functionality is provided by the **Edit Block**, which processes your i
 | **Model** | Selection | Yes | Choose between `nano-banana/edit` or `flux-pro/kontext` |
 | **Output File** | Save Path | No | Custom location to save the result (optional) |
 
+#### Image Upscale Block Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| **Image URL** | String | Yes | URL of the image to upscale |
+
 ### Output
 
-The workflow returns an array of processed image file paths that you can use in subsequent steps or download.
+- **Edit Block**: Returns an array of processed image file paths that you can use in subsequent steps or download
+- **Image Upscale Block**: Returns the URL of the upscaled image
 
 ## Usage Examples
 
@@ -70,6 +88,13 @@ Model: flux-pro/kontext
 Main Image: room-interior.jpg
 Prompt: "Replace the sofa with a modern leather couch"
 Model: nano-banana/edit
+```
+
+### Image Quality Enhancement
+```
+Image URL: https://example.com/low-res-photo.jpg
+Block: Image Upscale
+Output: High-resolution upscaled version
 ```
 
 ## Workflow Integration
