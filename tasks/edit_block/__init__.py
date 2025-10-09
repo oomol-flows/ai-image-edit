@@ -8,7 +8,7 @@ class Inputs(typing.TypedDict):
     model: typing.Literal["flux-pro/kontext", "nano-banana/edit"]
     output_file: str | None
 class Outputs(typing.TypedDict):
-    image: list[str]
+    image: typing.NotRequired[list[str]]
 #endregion
 
 import os
