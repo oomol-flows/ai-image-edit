@@ -1,5 +1,27 @@
 {
   "ai-image-edit": "AI Image Edit",
   "ai-image-edit-is-a-powerful-workflow-tool-that-uses-artificial-i": "AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone.",
-  "enter-a-paragraph-of-text-and-an-image-and-the-ai-will-edit-the": "Enter a paragraph of text and an image, and the AI ​​will edit the image based on the text and output the image address."
+  "enter-a-paragraph-of-text-and-an-image-and-the-ai-will-edit-the": "Enter a paragraph of text and an image, and the AI ​​will edit the image based on the text and output the image address.",
+  "test": "test",
+  "ai-image-edit-3": "AI Image Edit #3",
+  "ai-image-upscale-1": "AI Image Upscale #1",
+  "edit-block": "Edit Block",
+  "ai-powered-image-editing-block-that-allows-users-to-modify-image": "AI-powered image editing block that allows users to modify images using various models like flux-pro/kontext and nano-banana/edit with custom prompts",
+  "ai-powered-image-editor-that-modifies-the-main-image-based-on-te": "AI-powered image editor that modifies the main image based on text description",
+  "upscales-the-edited-image-to-higher-resolution": "Upscales the edited image to higher resolution",
+  "primary-image-file-to-be-edited-jpg-png-webp-or-jpeg-format": "Primary image file to be edited (JPG, PNG, WEBP, or JPEG format)",
+  "secondary-image-to-be-used-as-reference-or-overlay-in-the-editin": "Secondary image to be used as reference or overlay in the editing process",
+  "additional-reference-images-to-guide-the-ai-editing-process": "Additional reference images to guide the AI editing process",
+  "text-description-of-the-desired-image-modifications": "Text description of the desired image modifications",
+  "ai-model-to-use-for-image-editing": "AI model to use for image editing",
+  "path-where-the-edited-image-will-be-saved": "Path where the edited image will be saved",
+  "image-upscale": "Image Upscale",
+  "upscales-images-to-higher-resolution-using-ai-powered-enhancemen": "Upscales images to higher resolution using AI-powered enhancement algorithms",
+  "url-or-path-to-the-source-image-to-be-upscaled": "URL or path to the source image to be upscaled",
+  "ai-image-edit2": "AI Image Edit",
+  "key3": "Image file to be uploaded",
+  "llm-1": "LLM #1",
+  "ai-image-upscale": "AI Image Upscale",
+  "image-upscale-1": "Image Upscale #1",
+  "upload-file-to-cloud-1": "Upload File to Cloud #1"
 }

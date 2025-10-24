@@ -4,12 +4,15 @@ executor:
     entry: __init__.py
 inputs_def:
   - handle: image_url
+    description: "%url-or-path-to-the-source-image-to-be-upscaled%"
     json_schema:
       type: string
 outputs_def:
   - handle: upscaled_image_url
+    description: "URL or path to the upscaled high-resolution image"
     json_schema:
       type: string
-title: Image Upscale
+title: "%image-upscale%"
 icon: ":fa6-solid:angles-up:"
+description: "%upscales-images-to-higher-resolution-using-ai-powered-enhancemen%"
 private: true

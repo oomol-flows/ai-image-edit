@@ -1,11 +1,10 @@
-title: "Edit Block"
+title: "%edit-block%"
 icon: ":carbon:draw:"
-description: "AI-powered image editing block that allows users to modify images
-  using various models like flux-pro/kontext and nano-banana/edit with custom
-  prompts"
+description: "%ai-powered-image-editing-block-that-allows-users-to-modify-image%"
 
 inputs_def:
   - handle: main_image
+    description: "%primary-image-file-to-be-edited-jpg-png-webp-or-jpeg-format%"
     json_schema:
       type: string
       ui:widget: file
@@ -19,23 +18,25 @@ inputs_def:
               - webp
               - jpeg
   - handle: sub_image
+    description: "%secondary-image-to-be-used-as-reference-or-overlay-in-the-editin%"
     json_schema:
       type: string
       ui:widget: file
-    nullable: true
     value:
+    nullable: true
   - handle: other_images
-    description: 要上传的图像文件
+    description: "%additional-reference-images-to-guide-the-ai-editing-process%"
     json_schema:
       type: array
     value:
     nullable: true
   - handle: prompt
-    description: 图像处理提示词
+    description: "%text-description-of-the-desired-image-modifications%"
     json_schema:
       type: string
       ui:widget: text
   - handle: model
+    description: "%ai-model-to-use-for-image-editing%"
     json_schema:
       enum:
         - flux-pro/kontext
@@ -45,6 +46,7 @@ inputs_def:
           - flux-pro/kontext
           - nano-banana/edit
   - handle: output_file
+    description: "%path-where-the-edited-image-will-be-saved%"
     json_schema:
       type: string
       ui:widget: save
@@ -52,7 +54,7 @@ inputs_def:
     nullable: true
 outputs_def:
   - handle: image
-    description: 处理后的图像文件列表
+    description: "List of edited image file paths"
     json_schema:
       type: array
       items:

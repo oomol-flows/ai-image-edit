@@ -1,4 +1,4 @@
-title: "AI Image Edit"
+title: "%ai-image-edit2%"
 nodes:
   - node_id: fal-image-process#1
     task: self::edit_block
@@ -33,7 +33,7 @@ nodes:
         from_flow:
           - input_handle: main_image
   - node_id: llm#1
-    title: "LLM #1"
+    title: "%llm-1%"
     inputs_from:
       - handle: messages
         value: null
@@ -97,15 +97,15 @@ inputs_def:
     json_schema:
       type: string
       ui:widget: file
-    nullable: true
     value:
+    nullable: true
     executor_name: python
   - handle: other_images
+    description: "%key3%"
     json_schema:
       type: array
-    nullable: true
-    description: 要上传的图像文件
     value:
+    nullable: true
     executor_name: python
   - handle: description
     json_schema:

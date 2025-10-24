@@ -1,7 +1,7 @@
-title: AI Image Upscale
+title: "%ai-image-upscale%"
 nodes:
   - node_id: image-upscale#1
-    title: "Image Upscale #1"
+    title: "%image-upscale-1%"
     inputs_from:
       - handle: image_url
         from_node:
@@ -9,7 +9,7 @@ nodes:
             output_handle: remote_url
     task: self::image-upscale
   - node_id: upload-to-cloud#1
-    title: "Upload File to Cloud #1"
+    title: "%upload-file-to-cloud-1%"
     inputs_from:
       - handle: file
         from_flow:
