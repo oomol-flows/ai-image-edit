@@ -1,4 +1,6 @@
 {
+  "1": "Image preview #1",
+  "12": "Large Language Model Chat #1",
   "ai-image-edit": "AI Image Edit",
   "ai-image-edit-is-a-powerful-workflow-tool-that-uses-artificial-i": "AI Image Edit is a powerful workflow tool that uses artificial intelligence to edit and transform images according to your text instructions. Whether you want to change objects, modify scenes, or apply creative transformations, this tool makes complex image editing accessible to everyone.",
   "enter-a-paragraph-of-text-and-an-image-and-the-ai-will-edit-the": "Enter a paragraph of text and an image, and the AI ​​will edit the image based on the text and output the image address.",
@@ -23,5 +25,9 @@
   "llm-1": "LLM #1",
   "ai-image-upscale": "AI Image Upscale",
   "image-upscale-1": "Image Upscale #1",
-  "upload-file-to-cloud-1": "Upload File to Cloud #1"
+  "upload-file-to-cloud-1": "Upload File to Cloud #1",
+  "ai-1": "AI image editing #1",
+  "edited-image-file-path": "Edited image file path",
+  "url-or-path-to-the-upscaled-high-resolution-image": "URL or path of the high-resolution image after zooming in",
+  "key4": "Processed image file path"
 }
