@@ -17,17 +17,11 @@ inputs_def:
               - png
               - webp
               - jpeg
-  - handle: sub_image
+  - handle: reference_image
     description: "%secondary-image-to-be-used-as-reference-or-overlay-in-the-editin%"
     json_schema:
       type: string
       ui:widget: file
-    value:
-    nullable: true
-  - handle: other_images
-    description: "%additional-reference-images-to-guide-the-ai-editing-process%"
-    json_schema:
-      type: array
     value:
     nullable: true
   - handle: prompt
@@ -45,6 +39,7 @@ inputs_def:
         labels:
           - flux-pro/kontext
           - nano-banana/edit
+    value: nano-banana/edit
   - handle: output_file
     description: "%path-where-the-edited-image-will-be-saved%"
     json_schema:
@@ -54,11 +49,9 @@ inputs_def:
     nullable: true
 outputs_def:
   - handle: image
-    description: "List of edited image file paths"
+    description: "%edited-image-file-path%"
     json_schema:
-      type: array
-      items:
-        type: string
+      type: string
 
 executor:
   name: python
@@ -66,3 +59,5 @@ executor:
     entry: __init__.py
     spawn: false
 private: true
+ui:
+  default_width: 681.48828125

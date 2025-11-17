@@ -1,16 +1,14 @@
 {
+  "1": "图片预览 #1",
+  "12": "大语言模型聊天 #1",
   "ai-image-edit": "AI图像编辑",
   "ai-image-edit-is-a-powerful-workflow-tool-that-uses-artificial-i": "AI图像编辑是一款强大的工作流程工具，利用人工智能根据您的文本指令编辑和转换图像。无论您想更改物体、修改场景，还是进行创意变换，这款工具都能让复杂的图像编辑变得人人可用。",
   "enter-a-paragraph-of-text-and-an-image-and-the-ai-will-edit-the": "输入一段文本和一张图片，AI会根据文本编辑图片并输出图片地址。",
   "test": "测试",
-  "ai-image-edit-3": "AI 图像编辑 #3",
-  "ai-image-upscale-1": "AI 图像放大 #1",
   "edit-block": "编辑区块",
   "ai-powered-image-editing-block-that-allows-users-to-modify-image": "由 AI 驱动的图像编辑模块，允许用户使用诸如 flux-pro/kontext 和 nano-banana/edit 等多种模型，通过自定义提示词来修改图像",
   "key": "要上传的图像文件",
   "key2": "图像处理提示词",
-  "ai-powered-image-editor-that-modifies-the-main-image-based-on-te": "基于 AI 的图像编辑器，可根据文本描述修改主图",
-  "upscales-the-edited-image-to-higher-resolution": "将编辑后的图像升至更高分辨率",
   "primary-image-file-to-be-edited-jpg-png-webp-or-jpeg-format": "要编辑的主图像文件（ JPG 、 PNG 、 WEBP 或 JPEG 格式）",
   "secondary-image-to-be-used-as-reference-or-overlay-in-the-editin": "在编辑过程中用作参考或叠加的辅助图像",
   "additional-reference-images-to-guide-the-ai-editing-process": "用于指导 AI 编辑过程的额外参考图像",
@@ -22,8 +20,11 @@
   "url-or-path-to-the-source-image-to-be-upscaled": "要放大源图像的 URL 或路径",
   "ai-image-edit2": "AI 图像编辑",
   "key3": "要上传的图像文件",
-  "llm-1": "LLM #1\n\n大型语言模型 #1",
   "ai-image-upscale": "AI 图像放大",
   "image-upscale-1": "图像放大 #1",
-  "upload-file-to-cloud-1": "上传文件到云端 #1"
+  "upload-file-to-cloud-1": "上传文件到云端 #1",
+  "ai-1": "AI 图像编辑 #1",
+  "edited-image-file-path": "已编辑图像文件路径",
+  "url-or-path-to-the-upscaled-high-resolution-image": "放大后高分辨率图片的 URL 或路径",
+  "key4": "处理后的图像文件路径"
 }

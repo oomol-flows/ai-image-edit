@@ -3,18 +3,11 @@ nodes:
   - node_id: fal-image-process#1
     task: self::edit_block
     inputs_from:
-      - handle: other_images
-        value:
-          - /oomol-driver/oomol-storage
-        from_flow:
-          - input_handle: other_images
-        from_node:
-          []
       - handle: prompt
         value: Eagle to pigeon
         from_node:
-          - node_id: llm#1
-            output_handle: english_output
+          - node_id: llm-chat#1
+            output_handle: output
       - handle: output_file
         value:
         from_flow:
@@ -25,15 +18,15 @@ nodes:
         value: nano-banana/edit
         from_flow:
           - input_handle: model
-      - handle: sub_image
+      - handle: reference_image
         value:
         from_flow:
-          - input_handle: sub_image
+          - input_handle: reference_image
       - handle: main_image
         from_flow:
           - input_handle: main_image
-  - node_id: llm#1
-    title: "%llm-1%"
+  - node_id: llm-chat#1
+    title: "%12%"
     inputs_from:
       - handle: messages
         value: null
@@ -41,42 +34,38 @@ nodes:
         value: 30
       - handle: retry_times
         value: 0
-      - handle: retry_sleep
-        value: 3.5
       - handle: model
         value:
           model: deepseek-chat
           temperature: 0.5
           top_p: 1
-          max_tokens: 8192
+          max_tokens: 128000
       - handle: template
         value:
           - role: user
-            content: "将  {{input}}，翻译成英文。"
+            content: "Translate the input language of {{input}} into English output"
         schema_overrides:
           - schema:
               type: array
+      - handle: retry_sleep
+        value: 3.5
       - handle: skills
         value:
           []
       - handle: stream
         value: true
       - handle: input
-        value: 鸽子换成老鹰
+        value: hello!
         from_flow:
           - input_handle: description
-    task: llm::llm
+    task: llm::llm-chat
     inputs_def:
       - handle: input
+        description: User input text to be appended to the conversation
         json_schema:
           type: string
           ui:widget: text
         value: hello!
-    outputs_def:
-      - handle: english_output
-        description: write your answer here
-        json_schema:
-          type: string
 inputs_def:
   - handle: main_image
     json_schema:
@@ -93,17 +82,10 @@ inputs_def:
               - jpeg
     nullable: false
     executor_name: python
-  - handle: sub_image
+  - handle: reference_image
     json_schema:
       type: string
       ui:widget: file
-    value:
-    nullable: true
-    executor_name: python
-  - handle: other_images
-    description: "%key3%"
-    json_schema:
-      type: array
     value:
     nullable: true
     executor_name: python
@@ -134,12 +116,10 @@ inputs_def:
     executor_name: python
 outputs_def:
   - handle: image
+    description: "%key4%"
     json_schema:
-      type: array
-      items:
-        type: string
+      type: string
     nullable: false
-    description: 处理后的图像文件列表
     executor_name: python
 outputs_from:
   - handle: image

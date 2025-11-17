@@ -1,18 +1,18 @@
 {
   "nodes": {
-    "ai-image-edit#3": {
+    "ai-image-edit#1": {
       "rfNode": {
         "position": {
-          "x": 348.04763219543236,
-          "y": 436.12271397316346
+          "x": 356.5,
+          "y": 558.5
         }
       }
     },
-    "ai-image-upscale#1": {
+    "image_preview#1": {
       "rfNode": {
         "position": {
-          "x": 811,
-          "y": 421.5
+          "x": 969.5,
+          "y": 558.5
         }
       }
     }

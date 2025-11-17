@@ -9,7 +9,7 @@ inputs_def:
       type: string
 outputs_def:
   - handle: upscaled_image_url
-    description: "URL or path to the upscaled high-resolution image"
+    description: "%url-or-path-to-the-upscaled-high-resolution-image%"
     json_schema:
       type: string
 title: "%image-upscale%"

@@ -2,53 +2,43 @@
 import typing
 class Inputs(typing.TypedDict):
     main_image: str
-    sub_image: str | None
-    other_images: list[typing.Any] | None
+    reference_image: str | None
     prompt: str
     model: typing.Literal["flux-pro/kontext", "nano-banana/edit"]
     output_file: str | None
 class Outputs(typing.TypedDict):
-    image: typing.NotRequired[list[str]]
+    image: typing.NotRequired[str]
 #endregion
 
 import os
 import requests
 import json
 import time
-from typing import List, Dict, Any
+from typing import Any
 from oocana import Context
 import tempfile
 
 
-def main(params: Inputs, context: Context) -> Outputs:
-    console_api_url = context.oomol_llm_env.get("base_url")
-    api_key: Any = context.oomol_llm_env.get("api_key")
-    
+async def main(params: Inputs, context: Context) -> Outputs:
+    console_api_url = "https://llm.oomol.com"
+    api_key: Any = await context.oomol_token()
     main_image = params["main_image"]
-    sub_image = params.get("sub_image")
-    other_images = params.get("other_images", [])
+    reference_image = params.get("reference_image")
     prompt = params["prompt"]
     model = params.get("model", "nano-banana/edit")
-    
+
     # 合并所有图像文件
     file_paths = [main_image]
-    if sub_image:
-        file_paths.append(sub_image)
-    if other_images:
-        file_paths.extend(other_images)
-    
+    if reference_image:
+        file_paths.append(reference_image)
+
     # 构建包含图像角色信息的增强prompt
     enhanced_prompt = prompt
     if len(file_paths) > 1:
         image_descriptions = []
         image_descriptions.append("Image 1: main image")
-        if sub_image:
-            image_descriptions.append("Image 2: sub image")
-        if other_images:
-            start_idx = 3 if sub_image else 2
-            for i, _ in enumerate(other_images):
-                image_descriptions.append(f"Image {start_idx + i}: other image")
-        
+        image_descriptions.append("Image 2: reference image")
+
         enhanced_prompt = f"{prompt}\n\nImage descriptions:\n" + "\n".join(image_descriptions)
     
     # Validate input files exist

@@ -17,12 +17,23 @@
         }
       }
     },
-    "llm#1": {
-      "contentWidth": 350,
+    "llm-chat#1": {
       "rfNode": {
         "position": {
-          "x": 219.35402975233728,
-          "y": 617.0997850342329
+          "x": 185.82533202375714,
+          "y": 599.4047967607898
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "input": {
+              "[]": false
+            }
+          },
+          "groupCollapsed": {
+            "Connection": true
+          }
         }
       }
     }

@@ -9,6 +9,7 @@ icon: ./icon.png
 description: "%ai-image-edit-is-a-powerful-workflow-tool-that-uses-artificial-i%"
 repository: https://github.com/oomol-flows/ai-image-edit.git
 dependencies:
-  llm: 0.3.4
-  upload-to-cloud: 0.0.3
+  upload-to-cloud: 0.0.5
+  llm: 0.3.8
+  oomol-preview: 0.2.0
 releaseNotes: updat cn

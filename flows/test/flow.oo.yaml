@@ -1,31 +1,24 @@
 title: "%test%"
 nodes:
-  - node_id: ai-image-edit#3
-    title: "%ai-image-edit-3%"
-    description: "%ai-powered-image-editor-that-modifies-the-main-image-based-on-te%"
+  - node_id: ai-image-edit#1
+    title: "%ai-1%"
     inputs_from:
+      - handle: main_image
+        value: /oomol-driver/oomol-storage/ooimage.jpg
+      - handle: reference_image
+        value: null
       - handle: description
-        description: "Instruction to change the outfit in the main image"
-        value: 给主图换衣服
+        value: 背景换成杭州西湖
       - handle: model
-        description: "Selected AI model for image editing"
         value: nano-banana/edit
       - handle: output_file
-        description: "Output path for the edited image"
-        value: /oomol-driver/oomol-storage/image/image.j
-      - handle: other_images
-        description: "Additional reference images"
-        value:
-      - handle: sub_image
-        description: "Secondary reference image"
-        value:
-      - handle: main_image
-        description: "Source image to be edited"
+        value: null
     subflow: self::ai-image-edit
-  - node_id: ai-image-upscale#1
-    title: "%ai-image-upscale-1%"
-    description: "%upscales-the-edited-image-to-higher-resolution%"
+  - node_id: image_preview#1
+    title: "%1%"
     inputs_from:
-      - handle: file
-        description: "Image file to be upscaled"
-    subflow: self::ai-image-upscale
+      - handle: image_path
+        from_node:
+          - node_id: ai-image-edit#1
+            output_handle: image
+    task: oomol-preview::image_preview
