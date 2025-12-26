@@ -170,7 +170,7 @@ async def main(params: Inputs, context: Context) -> Outputs:
             temp_file = tempfile.NamedTemporaryFile(
                 suffix=file_extension, 
                 delete=False,
-                dir="/oomol-driver/oomol-storage"
+                dir=context.session_dir
             )
             temp_file.write(image_response.content)
             temp_file.close()

@@ -52,6 +52,7 @@ outputs_def:
     description: "%edited-image-file-path%"
     json_schema:
       type: string
+      ui:widget: file
 
 executor:
   name: python

@@ -39,7 +39,7 @@ nodes:
           model: deepseek-chat
           temperature: 0.5
           top_p: 1
-          max_tokens: 128000
+          max_tokens: 8100
       - handle: template
         value:
           - role: user
@@ -119,6 +119,7 @@ outputs_def:
     description: "%key4%"
     json_schema:
       type: string
+      ui:widget: file
     nullable: false
     executor_name: python
 outputs_from:
