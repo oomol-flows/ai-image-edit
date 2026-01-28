@@ -15,6 +15,21 @@
           "y": 558.5
         }
       }
+    },
+    "llm-chat#1": {
+      "rfNode": {
+        "position": {
+          "x": 1726.0041109883618,
+          "y": 637.7832356190423
+        }
+      },
+      "sections": {
+        "inputs": {
+          "groupCollapsed": {
+            "Connection": true
+          }
+        }
+      }
     }
   }
 }

@@ -36,9 +36,9 @@ nodes:
         value: 0
       - handle: model
         value:
-          model: deepseek-chat
-          temperature: 0.5
-          top_p: 1
+          model: openai/gpt-4.1
+          temperature: 0.6
+          top_p: 0.8
           max_tokens: 8100
       - handle: template
         value:

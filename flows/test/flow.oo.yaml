@@ -22,3 +22,42 @@ nodes:
           - node_id: ai-image-edit#1
             output_handle: image
     task: oomol-preview::image_preview
+  - node_id: llm-chat#1
+    title: "大语言模型聊天 #1"
+    inputs_from:
+      - handle: messages
+        value: null
+      - handle: timeout
+        value: 30
+      - handle: retry_times
+        value: 0
+      - handle: model
+        value:
+          model: deepseek-chat
+          temperature: 0.6
+          top_p: 1
+          max_tokens: 8100
+      - handle: template
+        value:
+          - role: user
+            content: "你好"
+        schema_overrides:
+          - schema:
+              type: array
+      - handle: retry_sleep
+        value: 3.5
+      - handle: skills
+        value:
+          []
+      - handle: stream
+        value: true
+      - handle: input
+        value: hello!
+    task: llm::llm-chat
+    inputs_def:
+      - handle: input
+        description: User input text to be appended to the conversation
+        json_schema:
+          type: string
+          ui:widget: text
+        value: hello!
